@@ -107,7 +107,7 @@ export default function Work() {
                 ))}
             </div>
 
-            <div className="sticky top-0 h-screen overflow-hidden z-10">
+            <div className="sticky top-0 h-screen overflow-hidden z-10 will-change-transform">
                 {/* Header */}
                 <div className="absolute top-8 left-[var(--gutter)] right-[var(--gutter)] z-20 flex items-start justify-between">
                     <div>

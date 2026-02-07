@@ -20,7 +20,7 @@ export default function Hero() {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen overflow-hidden bg-[#050505]"
+            className="relative min-h-screen bg-[#050505]"
         >
             {/* Subtle gradient overlay */}
             <div className="absolute inset-0">

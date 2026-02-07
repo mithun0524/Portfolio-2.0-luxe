@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScroll";
+import { PreloaderProvider } from "@/app/PreloaderContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -49,10 +50,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} antialiased noise-overlay`}
       >
-        <SmoothScroll>
-          <CustomCursor />
-          {children}
-        </SmoothScroll>
+        <PreloaderProvider>
+          <SmoothScroll>
+            <CustomCursor />
+            {children}
+          </SmoothScroll>
+        </PreloaderProvider>
       </body>
     </html>
   );

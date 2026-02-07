@@ -241,8 +241,9 @@ body {
 }
 
 .text-outline {
-  -webkit-text-stroke: 1px var(--off-white);
+  -webkit-text-stroke: 2px var(--warm-gray);
   -webkit-text-fill-color: transparent;
+  paint-order: stroke fill;
 }
 
 .text-vertical {
@@ -332,7 +333,7 @@ body {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  scroll-snap-type: x mandatory;
+  scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }

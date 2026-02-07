@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePreloader } from "@/app/PreloaderContext";
 
 export default function Preloader() {
     const [isLoading, setIsLoading] = useState(true);
     const [counter, setCounter] = useState(0);
+    const { setPreloaderComplete } = usePreloader();
 
     useEffect(() => {
         // Prevent scrolling while loading
@@ -19,6 +21,7 @@ export default function Preloader() {
                     clearInterval(interval);
                     setTimeout(() => {
                         setIsLoading(false);
+                        setPreloaderComplete(true);
                         document.body.style.overflow = "";
                     }, 800);
                     return 100;
